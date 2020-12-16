@@ -1,11 +1,17 @@
 import keyboard as kb
 from split import split
 from pynput.keyboard import Key, Controller
+from dotenv import load_dotenv
+import os
 import pyautogui
 import time
 import random
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = r'C:\Users\Dell\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
+load_dotenv()
+
+path=os.getenv('PATH_LINK')
+
+pytesseract.pytesseract.tesseract_cmd = path
 
 keyboard = Controller()
 mouse = Controller()
@@ -53,6 +59,7 @@ if canStart:
     lastKey = ["wrhj80h8v", "ksodfjpsdofs", "jr09hf340uithg"]
     
     while kb.is_pressed('esc') == False:
+        #Check the try again pixel
         time.sleep(0.2)
         img = pyautogui.screenshot(region=(952, 706, 500, 500))
         #img.save(r"currentLetter.png")
@@ -63,7 +70,7 @@ if canStart:
             pressKey(letters[-1])
 
         letters = pytesseract.image_to_string(img, config='tessedit_char_whitelist=0123456789')
-        #print(letters)
+        print(letters)
         lettersArray = split(letters)
         #print(lettersArray)
         key = lettersArray[0].lower()
