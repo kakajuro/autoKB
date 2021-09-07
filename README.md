@@ -13,8 +13,7 @@
 > The image recognition is not 100% accurate but it works well.
 
 ## Tesseract Setup
-> Download the latest version [here](https://github.com/UB-Mannheim/tesseract/wiki)
-> Then run
+> Download the latest version [here](https://github.com/UB-Mannheim/tesseract/wiki), then run:
 ```bash
 pip install pytesseract
 ```
