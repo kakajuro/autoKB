@@ -31,7 +31,7 @@ python main.py
 ```
 
 ## Contributing
-Pull requests are welcome.
+All pull requests are welcome.
 
 
 ## License
